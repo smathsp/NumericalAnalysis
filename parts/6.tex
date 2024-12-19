@@ -1,0 +1,48 @@
+\section{第6章 \quad 解线性方程的迭代法}
+
+本章要求掌握\textbf{雅可比迭代法}、\textbf{高斯-塞德尔迭代法}以及判断收敛性
+
+\subsection{雅可比迭代法、高斯-塞德尔迭代法}
+
+题目给出$Ax=b$，转化成$x=Bx+g$，例如：
+
+\[
+\begin{cases}
+5x_1 + 2x_2 + x_3 = -12 \\
+-x_1 + 4x_2 + 2x_3 = 20 \\
+2x_1 - 3x_2 + 10x_3 = 3
+\end{cases}
+\xrightarrow{}
+\begin{cases}
+x_1 = \frac{1}{5} \left(-2x_2 - x_3  -12\right) \\
+x_2 = \frac{1}{4} \left(x_1 - 2x_3  +20\right) \\
+x_3 = \frac{1}{10} \left(-2x_1 + 3x_2  +3\right)
+\end{cases}
+or
+\begin{cases}
+x_1 = -\frac{2}{5}x_2 - \frac{1}{5}x_3  -\frac{12}{5} \\
+x_2 = \frac{1}{4}x_1 - \frac{1}{2}x_3  + 5 \\
+x_3 = -\frac{1}{5}x_1 + \frac{3}{10}x_2  +\frac{3}{10}
+\end{cases}
+\]
+
+左侧雅可比迭代法(轮换)，右侧高斯-塞德尔迭代法(实时)，取$x^{(0)}=(1,1,1)^T$计算
+
+\[
+\begin{cases}
+x_1^{(k+1)} = -\frac{2}{5}x_2^{(k)} - \frac{1}{5}x_3^{(k)}  -\frac{12}{5} \\
+x_2^{(k+1)} = \frac{1}{4}x_1^{(k)} - \frac{1}{2}x_3^{(k)}  + 5 \\
+x_3^{(k+1)} = -\frac{1}{5}x_1^{(k)} + \frac{3}{10}x_2^{(k)}  +\frac{3}{10}
+\end{cases}
+\quad
+\begin{cases}
+x_1^{(k+1)} = -\frac{2}{5}x_2^{(k)} - \frac{1}{5}x_3^{(k)}  -\frac{12}{5} \\
+x_2^{(k+1)} = \frac{1}{4}x_1^{\textcolor{red}{(k+1)}} - \frac{1}{2}x_3^{(k)}  + 5 \\
+x_3^{(k+1)} = -\frac{1}{5}x_1^{\textcolor{red}{(k+1)}} + \frac{3}{10}x_2^{\textcolor{red}{(k+1)}}  +\frac{3}{10}
+\end{cases}
+\]
+
+\subsection{判断收敛性}
+
+四个方法按顺序判断
+
