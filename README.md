@@ -5,4 +5,12 @@
 - 第六章
 ……
 
-LaTeX模板来自[Elegant Note](https://github.com/ElegantLaTeX/ElegantNote)
+
+
+
+
+# License
+
+欢迎参与本项目！本项目使用 [ElegantNote](https://github.com/ElegantLaTeX/ElegantNote) LaTeX 模板编写。
+
+遵循 LPPL-1.3c

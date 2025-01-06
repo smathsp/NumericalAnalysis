@@ -1,6 +1,6 @@
-\section{第6章 \quad 解线性方程的迭代法}
+\section{第6章解线性方程的迭代法}
 
-本章要求掌握\textbf{雅可比迭代法}、\textbf{高斯-塞德尔迭代法}以及判断收敛性
+本章要求掌握\textbf{雅可比迭代法}、\textbf{高斯-塞德尔迭代法}以及\textbf{判断收敛性}
 
 \subsection{雅可比迭代法、高斯-塞德尔迭代法}
 
@@ -46,3 +46,40 @@ x_3^{(k+1)} = -\frac{1}{5}x_1^{\textcolor{red}{(k+1)}} + \frac{3}{10}x_2^{\textc
 
 四个方法按顺序判断
 
+\noindent
+1. 若$A$为\textbf{严格对角占优}，则$J$和$GS$都收敛（充分）。
+
+对角占优是指对角线上的元素绝对值大于同一行（列）其余元素绝对值之和，全部都大则是严格行（列）对角占优。行列一个是严格的就可以判断收敛。
+
+\noindent
+2. $B_j$存在某种范数\ref{fanshu}绝对值小于1，则$J$和$GS$都收敛（充分）。
+
+$B_j$是对角线为0，其余元素除以对应行对角线元素再乘以-1
+
+\noindent
+3. 若$A$为正定矩阵，则$GS$收敛（充分），若$A$和$2D-A$都为正定矩阵，则$J$收敛（充要）。
+
+正定矩阵：顺序主子式大于0，\quad $D$是$A$的对角线元素矩阵
+
+\noindent
+4. 谱半径 $\rho(B) < 1 \iff$ 则对应$J$和$GS$收敛（充要）。\quad $\rho(B)$是\textbf{特征值最大值}，简便计算：
+
+\[
+|\lambda I - B_j| = 0 \implies
+\begin{vmatrix}
+\lambda a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & \lambda a_{12} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & \lambda a_{nn}
+\end{vmatrix}
+= 0
+\quad \quad
+|\lambda I - B_S| = 0 \implies
+\begin{vmatrix}
+\lambda a_{11} & a_{12} & \cdots & a_{1n} \\
+\lambda a_{21} & \lambda a_{12} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\lambda a_{n1} & \lambda a_{n2} & \cdots & \lambda a_{nn}
+\end{vmatrix}
+= 0
+\]
